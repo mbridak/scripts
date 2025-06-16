@@ -1,0 +1,10 @@
+[Unit]
+Description="CW Daemon"
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/cwdaemon -d null -x p -T 700 -s 30
+
+[Install]
+WantedBy=default.target
+

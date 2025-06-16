@@ -1,0 +1,24 @@
+[Unit]
+Description="Rigctld Daemon"
+After=network.target
+
+[Service]
+Type=simple
+#QRPLabs
+ExecStart=/usr/bin/rigctld -m 2052 -r /dev/serial/by-id/usb-QRP_Labs_QMX_Transceiver-if00
+
+
+#Testing Dummy
+#ExecStart=/usr/bin/rigctld -m 1
+
+#Icom 7300
+#ExecStart=/usr/bin/rigctld -m 3073 -r /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_IC-7300_02002276-if00-port0
+
+#ft817
+#ExecStart=/usr/bin/rigctld -m 1020 -s 38400 -r /dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

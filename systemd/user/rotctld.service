@@ -1,0 +1,15 @@
+[Unit]
+Description="rotctld Daemon"
+After=network.target
+
+[Service]
+Type=simple
+
+#Testing Dummy
+ExecStart=/usr/bin/rotctld -m 1
+
+Restart=always
+
+[Install]
+WantedBy=default.target
+
